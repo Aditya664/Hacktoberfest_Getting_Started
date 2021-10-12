@@ -11,7 +11,7 @@ Follow the README below to get started!
 - [The Process](#the-process)
 
 ## The Process
-1.star this repo
+1. star this repo
 2. Fork this repository
 3. Run `git clone [your repo url goes here]`
 4. CD into your cloned repo
