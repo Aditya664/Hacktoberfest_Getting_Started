@@ -1,10 +1,10 @@
-#include <iostream>				
+#include <iostream>
 
 using namespace std;
 
 class hash_table			//Class hash_table created
 {
-  public:
+public:
 
     int table_hash[50];			//Array Creation
     int table_hash_size;		//Create hash value size
@@ -13,17 +13,17 @@ class hash_table			//Class hash_table created
     {
         table_hash_size =8;
         ctr = 0;
-        for(int i=0;i<table_hash_size;i++)		//increment hash table index as elements are inserted
+        for(int i=0; i<table_hash_size; i++)		//increment hash table index as elements are inserted
         {
             table_hash[i] = -1;
         }
     }
     void store_value_linear_probin_with_replacemet(int value);					//Function Declaration
-	int calculate_hash_value(int value);
-	int search_value_in_hash_table_hash_linear_probing(int value);
+    int calculate_hash_value(int value);
+    int search_value_in_hash_table_hash_linear_probing(int value);
     void display_hash_table_hash_linear_probing();
 
-    
+
 
 };
 
@@ -71,8 +71,8 @@ int hash_table::search_value_in_hash_table_hash_linear_probing(int value)			//Se
         }
         else if(flag==2)
         {
-        	cout<<"\nHash Value Not found";
-		}
+            cout<<"\nHash Value Not found";
+        }
     }
 }
 
@@ -82,7 +82,7 @@ int hash_table::calculate_hash_value(int value)			//Calculate Hash value functio
 }
 
 
-void hash_table::store_value_linear_probin_with_replacemet(int value)		//Store Hash value with replacement Function 
+void hash_table::store_value_linear_probin_with_replacemet(int value)		//Store Hash value with replacement Function
 {
     int hashvalue = calculate_hash_value(value);			//calcuate hash value
     //if the location is empty
@@ -98,10 +98,10 @@ void hash_table::store_value_linear_probin_with_replacemet(int value)		//Store H
         int temp_hash_value = calculate_hash_value(table_hash[hashvalue]);				//store that hash value in temp variable
         if(temp_hash_value == hashvalue)								//if else statement
         {
-            while(1)										
+            while(1)
             {
                 hashvalue = (hashvalue + 1) %table_hash_size;						//calcuate immediate next hash value location
-                if(table_hash[hashvalue] == -1)								//if that hash value location is empty		
+                if(table_hash[hashvalue] == -1)								//if that hash value location is empty
                 {
                     flag = 1;							//flag as 1
                     break;
@@ -120,8 +120,8 @@ void hash_table::store_value_linear_probin_with_replacemet(int value)		//Store H
             }
         }
         //replace data
-        else					
-        						//else replace existing element in that hash location to next immediate location and insert required value at that hash location
+        else
+            //else replace existing element in that hash location to next immediate location and insert required value at that hash location
         {
             int temp_value = table_hash[hashvalue];
             table_hash[hashvalue] = value;
@@ -129,7 +129,7 @@ void hash_table::store_value_linear_probin_with_replacemet(int value)		//Store H
             {
                 hashvalue = (hashvalue + 1) %table_hash_size;					//calcuate immediate next hash value location
                 if(table_hash[hashvalue] == -1)								//check if that location is empty
-                {	
+                {
                     flag = 1;
                     break;
                 }
@@ -140,7 +140,7 @@ void hash_table::store_value_linear_probin_with_replacemet(int value)		//Store H
                     break;
                 }
             }
-            if(flag == 1)							//insert hash value 
+            if(flag == 1)							//insert hash value
             {
                 table_hash[hashvalue] = temp_value;
                 ctr++;
@@ -154,7 +154,7 @@ void hash_table::store_value_linear_probin_with_replacemet(int value)		//Store H
 void hash_table::display_hash_table_hash_linear_probing()			//Display Hash table linear probing Function
 {
     cout<<endl<<"Hash Table:-";
-    for(int i=0;i<table_hash_size;i++)
+    for(int i=0; i<table_hash_size; i++)
     {
         cout<<endl<<"     "<<i<<"     "<<table_hash[i];
     }
@@ -169,56 +169,56 @@ int main()													//Main Function
     cout<<"<---------------Welcome to Balu's Ice-Cream Parlour--------------->";
     do																					//do while statement
     {
-    	cout<<"\n\n1.Insert Flavour_ID\n2.Search Flavour\n3.Display Flavour\n4.Exit\n";
-	    cout<<"\nEnter your choice:-\n";
-	    cin>>ch;
-	    cout<<endl;
-    	switch(ch)																										//switch case statement
-    {
-    	case 1:																										//Case 1 
-    	{
-			if(ch==1)
-			{
-				
-					while(1)
-	    			{
-	        		cout<<"\n Enter the Flavour_ID : ";
-	        		cin>>value;
-			        h.store_value_linear_probin_with_replacemet(value);
-			        cout<<"\n Do you want to continue (1/0) : ";
-			        cin>>choice;
-			        if(choice == 0)
-			        break;
-	    			}
-				}
-			}
-		break;
-    	case 2:																				//Case 2
-    	{		
-    		int ch2,val;
-		    	while(1)
-				    {
-				        cout<<"\n Enter the Flavour_ID to be searched: ";
-				        cin>>val;
-				        h.search_value_in_hash_table_hash_linear_probing(val);
-				        cout<<"\n Do you want to search other value (1/0) : ";
-				        cin>>ch2;
-				        if(ch2 == 0)
-				        break;
-				    }
-				break;    
-		    }
-		    
-		case 3:																	//Case 3
-		{	
-			if(ch==3)
-				h.display_hash_table_hash_linear_probing();
-		}
-		break;
-		case 4:														//Case 4
-			exit(0);		
-	}
-	}while(ch!=4);
-    
-return 0;
+        cout<<"\n\n1.Insert Flavour_ID\n2.Search Flavour\n3.Display Flavour\n4.Exit\n";
+        cout<<"\nEnter your choice:-\n";
+        cin>>ch;
+        cout<<endl;
+        switch(ch)																										//switch case statement
+        {
+        case 1:																										//Case 1
+        {
+            if(ch==1)
+            {
+
+                while(1)
+                {
+                    cout<<"\n Enter the Flavour_ID : ";
+                    cin>>value;
+                    h.store_value_linear_probin_with_replacemet(value);
+                    cout<<"\n Do you want to continue (1/0) : ";
+                    cin>>choice;
+                    if(choice == 0)
+                        break;
+                }
+            }
+        }
+        break;
+        case 2:																				//Case 2
+        {
+            int ch2,val;
+            while(1)
+            {
+                cout<<"\n Enter the Flavour_ID to be searched: ";
+                cin>>val;
+                h.search_value_in_hash_table_hash_linear_probing(val);
+                cout<<"\n Do you want to search other value (1/0) : ";
+                cin>>ch2;
+                if(ch2 == 0)
+                    break;
+            }
+            break;
+        }
+
+        case 3:																	//Case 3
+        {
+            if(ch==3)
+                h.display_hash_table_hash_linear_probing();
+        }
+        break;
+        case 4:														//Case 4
+            exit(0);
+        }
+    } while(ch!=4);
+
+    return 0;
 }
