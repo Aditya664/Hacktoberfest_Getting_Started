@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-class node{
-    public:
+class node {
+public:
     node* next;
     int data;
 
@@ -12,9 +12,9 @@ class node{
     }
 };
 
-class LinkedList{
+class LinkedList {
     node* start;
-    public:
+public:
     LinkedList()
     {
         start=NULL;
@@ -42,7 +42,7 @@ class LinkedList{
         {
             start=new node(val);
         }
-        else{
+        else {
             node *new_node=new node(val);
             new_node->next=start;
             start=new_node;
@@ -50,18 +50,18 @@ class LinkedList{
     }
     void pop_back()
     {
-        
+
         node *current=start;
         if(current==NULL)
         {
             cout<<"LIST EMPTY"<<endl;
         }
-        else{
-        while(current->next!=NULL)
-        {
-            current=current->next;
-        }
-        current->next=NULL;
+        else {
+            while(current->next!=NULL)
+            {
+                current=current->next;
+            }
+            current->next=NULL;
         }
     }
     void pop_front()
@@ -70,7 +70,7 @@ class LinkedList{
         if(current==NULL)
         {
             cout<<"LIST EMPTY"<<endl;
-        
+
         }
         else
         {
