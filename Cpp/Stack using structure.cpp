@@ -68,42 +68,42 @@ int main()
     char element;
     struct stack s1;
     s1.top=-1;
-    
+
 
     while(true)
     {
-    cout<<"Select choice."<<endl;
-    cout<<"1. Display stack."<<endl;
-    cout<<"2. Pop element."<<endl;
-    cout<<"3. Push element."<<endl;
-    cout<<"4. Top element."<<endl;
-    cout<<"5. Exit."<<endl;
-    cout<<"\n\n";
-    cin>>choice;
-    if (choice==1)
-    {
-        display(&s1);
-    }
-    else if(choice==2)
-    {
-        pop(&s1);
-    }
-    else if (choice==3)
-    {
-        cout<<"Enter element to be pushed into stack: ";
-        cin>>element;
-        push(&s1,element);
-    }
-    else if(choice==4)
-    {
-        top(&s1);
-    }
-    else if(choice==5)
-    {
-        break;
-    }
-    else{
-        cout<<"Invalid choice";
-    }
+        cout<<"Select choice."<<endl;
+        cout<<"1. Display stack."<<endl;
+        cout<<"2. Pop element."<<endl;
+        cout<<"3. Push element."<<endl;
+        cout<<"4. Top element."<<endl;
+        cout<<"5. Exit."<<endl;
+        cout<<"\n\n";
+        cin>>choice;
+        if (choice==1)
+        {
+            display(&s1);
+        }
+        else if(choice==2)
+        {
+            pop(&s1);
+        }
+        else if (choice==3)
+        {
+            cout<<"Enter element to be pushed into stack: ";
+            cin>>element;
+            push(&s1,element);
+        }
+        else if(choice==4)
+        {
+            top(&s1);
+        }
+        else if(choice==5)
+        {
+            break;
+        }
+        else {
+            cout<<"Invalid choice";
+        }
     }
 }
