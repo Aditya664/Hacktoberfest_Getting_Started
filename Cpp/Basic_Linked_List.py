@@ -39,7 +39,7 @@ class LinkedList:
             return
         # Else, traverse to last node
         last = self.head
-        while (last.next):
+        while last.next:
             last = last.next
         # attach new node
         last.next = new_node
@@ -47,7 +47,7 @@ class LinkedList:
     # PRINT LIST
     def printlist(self):
         temp = self.head
-        while (temp):
+        while temp:
             print(temp.data)
             temp = temp.next
 
@@ -61,7 +61,7 @@ class LinkedList:
                 temp = None
                 return
         # moving ahead from head node, until key found
-        while(temp is not None):
+        while temp is not None:
             if temp.data == key:
                 break
             prev = temp
@@ -85,7 +85,7 @@ class LinkedList:
             temp = None
             return
         # find previous node of the node to be deleted
-        for i in range(pos-1):
+        for i in range(pos - 1):
             temp = temp.next
             if temp is None:
                 break
@@ -117,7 +117,7 @@ class LinkedList:
     def reverse(self):
         prev = None
         current = self.head
-        while(current is not None):
+        while current is not None:
             next = current.next
             current.next = prev
             prev = current
@@ -125,7 +125,7 @@ class LinkedList:
         self.head = prev
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     list1 = LinkedList()
     list1.append(6)
     list1.append(3)
