@@ -6,57 +6,58 @@ using namespace std;
 
 class SinglyLinkedListNode {
 public:
-    int data;
-    SinglyLinkedListNode *next;
+  int data;
+  SinglyLinkedListNode *next;
 
-    SinglyLinkedListNode(int node_data) {
-        this->data = node_data;
-        this->next = nullptr;
-    }
+  SinglyLinkedListNode(int node_data) {
+    this->data = node_data;
+    this->next = nullptr;
+  }
 };
 
 class SinglyLinkedList {
 public:
-    SinglyLinkedListNode *head;
-    SinglyLinkedListNode *tail;
+  SinglyLinkedListNode *head;
+  SinglyLinkedListNode *tail;
 
-    SinglyLinkedList() {
-        this->head = nullptr;
-        this->tail = nullptr;
+  SinglyLinkedList() {
+    this->head = nullptr;
+    this->tail = nullptr;
+  }
+
+  void insert_node(int node_data) {
+    SinglyLinkedListNode *node = new SinglyLinkedListNode(node_data);
+
+    if (!this->head) {
+      this->head = node;
+    } else {
+      this->tail->next = node;
     }
 
-    void insert_node(int node_data) {
-        SinglyLinkedListNode* node = new SinglyLinkedListNode(node_data);
-
-        if (!this->head) {
-            this->head = node;
-        } else {
-            this->tail->next = node;
-        }
-
-        this->tail = node;
-    }
+    this->tail = node;
+  }
 };
 
-void print_singly_linked_list(SinglyLinkedListNode* node, string sep, ofstream& fout) {
-    while (node) {
-        fout << node->data;
+void print_singly_linked_list(SinglyLinkedListNode *node, string sep,
+                              ofstream &fout) {
+  while (node) {
+    fout << node->data;
 
-        node = node->next;
+    node = node->next;
 
-        if (node) {
-            fout << sep;
-        }
+    if (node) {
+      fout << sep;
     }
+  }
 }
 
-void free_singly_linked_list(SinglyLinkedListNode* node) {
-    while (node) {
-        SinglyLinkedListNode* temp = node;
-        node = node->next;
+void free_singly_linked_list(SinglyLinkedListNode *node) {
+  while (node) {
+    SinglyLinkedListNode *temp = node;
+    node = node->next;
 
-        free(temp);
-    }
+    free(temp);
+  }
 }
 
 // Complete the mergeLists function below.
@@ -70,8 +71,5 @@ void free_singly_linked_list(SinglyLinkedListNode* node) {
  * };
  *
  */
-SinglyLinkedListNode* mergeLists(SinglyLinkedListNode* head1, SinglyLinkedListNode* head2) {
-
-
-}
-
+SinglyLinkedListNode *mergeLists(SinglyLinkedListNode *head1,
+                                 SinglyLinkedListNode *head2) {}
